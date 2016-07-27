@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'logins/new'
+
   root  'docpages#home'
 
   get'about' => 'docpages#about'
