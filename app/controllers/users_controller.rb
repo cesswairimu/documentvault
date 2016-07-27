@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(join_params)
     if @user.save
+      flash[:yeah] = "Welcome to Document Vault Cheeers!! have fun"
       redirect_to @user
     else
       render 'new'
@@ -14,9 +15,15 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
+
+  def index
+    @users = User.all
+  end
+
   def edit
     @user = User.find(params[:id])
   end
+  
   def update
     @user = User.find(params[:id])
     @user.update_attributes(join_params)
