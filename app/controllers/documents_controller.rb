@@ -7,14 +7,14 @@ class DocumentsController < ApplicationController
     @document = Document.new(doc_params)
     if @document.save
       flash[:yeah] = "Successfully added a new document in the vault"
-      redirect_to @user
+      redirect_to root_url
     else
+      flash[:nasty] = "Error adding the document"
       render 'new'
     end
   end
 
 def show
-  @document = Document.find(params[:id])
 end
 
 def index
