@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   root  'docpages#home'
 
   get'about' => 'docpages#about'
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
   delete 'logout' => 'logins#destroy'
   resources :users
   resources :logins
+  resources :documents
   
 end
