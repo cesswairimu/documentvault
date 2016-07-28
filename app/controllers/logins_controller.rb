@@ -7,6 +7,7 @@ class LoginsController < ApplicationController
       flash[:yeah]= "Welcome back"
       log_in user 
       redirect_to user
+      remember user
     else
       flash[:nasty] = "Check your email and password Bunch"
       render 'new'
@@ -15,7 +16,7 @@ class LoginsController < ApplicationController
   
 
   def destroy
-    logout
+    logout if logged_in?
     redirect_to root_url
   end
 end
