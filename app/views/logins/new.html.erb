@@ -6,8 +6,9 @@
     <%= f.password_field :password %><br> <br>
     <%=  link_to "(forgot password)", "#" %><br> <br >
     <%= f.label :remember do  %>
-    <%= f.check_box :Remember %> <br>
-    <% end %>
+        <%= f.check_box :Remember %> 
+        <span> Remember me here </span>
+    <% end %><br>
 
     <%= f.submit "Login"%> 
 
