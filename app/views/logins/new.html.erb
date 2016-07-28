@@ -5,6 +5,6 @@
     <%= f.label :password, placeholder: "password" %>
     <%= f.password_field :password %><br> <br>
     <%=  link_to "(forgot password)", "#" %><br> <br >
-    <%= f.submit "Login" %><br>
+    <%= f.submit "Login",login_path %><br>
     <p>Are you new here?<%= link_to "Join now!", join_path %></p>
 <% end %>
