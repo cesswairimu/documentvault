@@ -1,2 +1,10 @@
-<h1>Logins#new</h1>
-<p>Find me in app/views/logins/new.html.erb</p>
+<h1>Login Here</h1>
+<%= form_for(:login, url: login_path)  do |f| %>
+    <%= f.label :name, placeholder: "name" %>
+    <%= f.text_field :name %><br><br>
+    <%= f.label :password, placeholder: "password" %>
+    <%= f.password_field :password %><br> <br>
+    <%=  link_to "(forgot password)", "#" %><br> <br >
+    <%= f.submit "Login" %><br>
+    <p>Are you new here?<%= link_to "Join now!", join_path %></p>
+<% end %>

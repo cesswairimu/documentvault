@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'logins/new'
 
   root  'docpages#home'
 
@@ -8,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'support' => 'docpages#support'
   get 'join' => 'users#new'
+  get 'login' => 'logins#new'
+  post 'login' => 'logins#create'
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :logins
 end
