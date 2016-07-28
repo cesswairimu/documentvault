@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :documents
   attr_accessor :remember_token
   REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :name, presence: true, length: { maximum: 20 }
