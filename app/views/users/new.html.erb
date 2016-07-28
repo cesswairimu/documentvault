@@ -1,6 +1,6 @@
 <h1>Join Document Vault!!</h1>
 <%= form_for(@user) do  |f|%>
-    <%= render 'shared/errors' %><br>
+    <%= render 'shared/errors', object: f.object %>
     <%= f.label :name %>
     <%= f.text_field :name,  placeholder: "Name" %><br><br>
     <%= f.label :email %>

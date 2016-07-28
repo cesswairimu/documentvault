@@ -1,8 +1,12 @@
-<% if @user.errors.any? %>
-    <% @user.errors.full_messages.each do |message| %>
-        <ul>
-            <li>  <%= message %> </li>
-        </ul>
-    <% end %>
+<% if object.errors.any? %>
+            This form contains
+            <%= pluralize(object.errors.count, "error") %>
+    <div id = "error">
+        <% object.errors.full_messages.each do |message| %>
+            <ul>
+                <li>  <%= message %> </li>
+            </ul>
+        <% end %>
+    </div>
 <% end %>
 
