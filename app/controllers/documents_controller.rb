@@ -21,7 +21,20 @@ end
 def department
   @department = Document.where("department = ?", "Training")
 end
+# def market
+#   @department = Document.where("department = ?", "Marketing")
+# end
 
+# depf compute
+#   @department = Document.where("department = ?", "Computing")
+# end
+
+# def account
+#   @department = Document.where("department = ?", "Accounting")
+# end
+# def operation
+#   @department = Document.where("department = ?", "Operations")
+# end
 def index
   @documents = Document.all
 end
