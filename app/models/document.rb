@@ -4,5 +4,6 @@ class Document < ApplicationRecord
   validates :link, presence: true, length: { maximum: 50 }
   validates :tag, presence: true
   validates :department, presence: true
+  validates :content, presence: true, length: {minimum: 50 }
   DEPARTMENT_LIST = [ "Operations", "Training", "Marketing" ]
 end

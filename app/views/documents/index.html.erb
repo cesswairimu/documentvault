@@ -12,7 +12,7 @@
     <td><%= doc.title %></li>
     <td><%= doc.user.name %></li>
     <td><%= doc.tag %></td>
-    <td><%= link_to doc.link{|t| link_to t, doc_link_path(t)} %></td>
+        <td><%=  link_to (doc.link), document_path(id: doc.id) %></td>
     <td><%=doc.department %></td>
     </tr>
     <% end %>

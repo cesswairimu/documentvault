@@ -23,3 +23,20 @@ background:#bf5c71;
 #error {
     color:maroon;
 }
+#text-area {
+    border: 1px solid gray;
+    position:center;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+    background-color:pink;
+    height: 400px;
+    overflow: auto;
+    padding: 2px;
+    resize: both;
+    width: 600px;
+
+
+}
+#text-area.h2{
+    font:italic;
+}
