@@ -24,7 +24,7 @@ end
 
   private
 def doc_params
-  params.require(:document).permit(:title, :link, :tag, :department)
+  params.require(:document).permit(:title, :link, :tag, :department, :content)
 end
       
 end
