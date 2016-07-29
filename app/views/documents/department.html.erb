@@ -1,0 +1,17 @@
+<h1>Training</h1>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Tag</th>
+        <th>Upload By</th>
+        <th>Link</th>
+    </tr>
+<% @department.each do |f| %>
+    <tr>
+    <td><%= f.title %></td>
+    <td><%= f.tag %></td>
+    <td><%= link_to (f.link), document_path(id: f.id) %>
+    <td><%= f.user.name %></td>
+    </tr>
+    <% end %>
+    </table>
