@@ -1,10 +1,10 @@
 class DocumentsController < ApplicationController
   def new
-    @document = Document.new
+    @document = current_user.documents.build
   end
 
   def create
-    @document = Document.new(doc_params)
+    @document = current_user.documents.build(doc_params)
     if @document.save
       flash[:yeah] = "Successfully added a new document in the vault"
       redirect_to root_url
@@ -15,6 +15,7 @@ class DocumentsController < ApplicationController
   end
 
 def show
+  @document = Document.find(params[:id])
 end
 
 def index

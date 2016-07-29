@@ -1,2 +1,15 @@
-<%= @document.title %><br>
-<%= @document.tag %>
+<table>
+    <h2> All Documents</h2>
+    <tr>
+        <th>Title</th>
+        <th>Tag</th>
+        <th>Link</th>
+        <th>Department</th>
+    </tr>
+    <tr>
+        <td><%= @document.title %></td>
+        <td><%= @document.tag %></td>
+        <td><%= @document.link %></td>
+        <td><%= @document.department %></td>
+    </tr>
+</table>
