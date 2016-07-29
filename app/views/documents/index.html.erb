@@ -1,1 +1,18 @@
-<%>
+<h1> Documents </h1>
+<table>
+    <tr>
+        <th> Title </th>
+        <th> Upload By </th>
+        <th> Tag </th>
+        <th> Link </th>
+        <th> Department</th>
+    </tr>
+    <tr>
+<% @documents.each do |doc| %>
+    <td><%= doc.title %></li>
+    <td><%= doc.user.name %></li>
+    <td><%= doc.tag %></td>
+    <td><%= link_to doc.link{|t| link_to t, doc_link_path(t)} %></td>
+    <td><%=doc.department %></td>
+    </tr>
+    <% end %>
