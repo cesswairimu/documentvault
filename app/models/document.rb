@@ -5,5 +5,5 @@ class Document < ApplicationRecord
   validates :tag, presence: true
   validates :department, presence: true
   validates :content, presence: true, length: {minimum: 50 }
-  DEPARTMENT_LIST = [ "Operations", "Training", "Marketing" ]
+  DEPARTMENT_LIST = [ "Operations", "Training", "Marketing","Computing", "Accounting", ]
 end
