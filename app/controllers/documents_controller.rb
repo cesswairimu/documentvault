@@ -18,6 +18,10 @@ def show
   @document = Document.find(params[:id])
 end
 
+def department
+  @department = Document.where("department = ?", "Training")
+end
+
 def index
   @documents = Document.all
 end
