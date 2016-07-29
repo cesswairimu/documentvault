@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get 'login' => 'logins#new'
   post 'login' => 'logins#create'
   delete 'logout' => 'logins#destroy'
-  get 'department' => 'documents#department'
   resources :users
   resources :logins
   resources :documents
