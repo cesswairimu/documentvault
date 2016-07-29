@@ -9,7 +9,7 @@ class DocumentsController < ApplicationController
       flash[:yeah] = "Successfully added a new document in the vault"
       redirect_to @document
     else
-      flash[:nasty] = "Error adding the document"
+      flash.now[:nasty] = "Error adding the document"
       render 'new'
     end
   end
