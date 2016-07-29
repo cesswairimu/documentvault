@@ -7,7 +7,7 @@ class DocumentsController < ApplicationController
     @document = current_user.documents.build(doc_params)
     if @document.save
       flash[:yeah] = "Successfully added a new document in the vault"
-      redirect_to root_url
+      redirect_to @document
     else
       flash[:nasty] = "Error adding the document"
       render 'new'
