@@ -9,7 +9,7 @@
     <%= f.label :tag %>
     <%= f.text_field :tag, placeholder: "Tag" %><br><br>
     <%= f.label :department %>
-    <%= f.select :department,  Document::DEPARTMENT_LIST %><br><br>
+    <%= f.select :department,  Document::DEPARTMENT_LIST, {prompt: "Select a department"} %><br><br>
     <%= f.label :Content %>
     <%= f.text_area :content, placeholder: "Enter your content here", 
         cols: "100", rows: "30" %><br><br>

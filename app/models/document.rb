@@ -6,4 +6,5 @@ class Document < ApplicationRecord
   validates :department, presence: true
   validates :content, presence: true, length: {minimum: 50 }
   DEPARTMENT_LIST = [ "Operations", "Training", "Marketing" ]
+  scope :a, -> { where("department") }
 end
