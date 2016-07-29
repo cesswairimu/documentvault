@@ -6,6 +6,7 @@
         <th> Tag </th>
         <th> Link </th>
         <th> Department</th>
+        
     </tr>
     <tr>
 <% @documents.each do |doc| %>
@@ -16,3 +17,9 @@
     <td><%=doc.department %></td>
     </tr>
     <% end %>
+    <%= link_to "Training", documents_path(department: "Training") %> |
+    <%= link_to "Marketing", documents_path(department: "Marketing") %> |
+    <%= link_to "Computing", documents_path(department: "Computing") %> | 
+    <%= link_to "Accounting", documents_path(department: "Accounting") %> |
+    <%= link_to "Operations", documents_path(department: "Operations") %> |
+
