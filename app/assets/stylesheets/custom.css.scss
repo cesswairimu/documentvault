@@ -1,4 +1,4 @@
-#list
+.list
 {
     li{
         display:inline;
@@ -40,3 +40,18 @@ background:#bf5c71;
 #text-area.h2{
     font:italic;
 }
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+th{
+color:maroon;
+}
+th, td {
+    padding: 0.25rem;
+    text-align: left;
+   // border: 1px solid #ccc;
+
+}
+
