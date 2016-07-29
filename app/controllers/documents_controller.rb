@@ -14,34 +14,20 @@ class DocumentsController < ApplicationController
     end
   end
 
-def show
-  @document = Document.find(params[:id])
-end
+  def show
+    @document = Document.find(params[:id])
+  end
 
-def department
-  @department = Document.where("department = ?", "Training")
-end
-# def market
-#   @department = Document.where("department = ?", "Marketing")
-# end
-
-# depf compute
-#   @department = Document.where("department = ?", "Computing")
-# end
-
-# def account
-#   @department = Document.where("department = ?", "Accounting")
-# end
-# def operation
-#   @department = Document.where("department = ?", "Operations")
-# end
-def index
-  @documents = Document.all
-end
+  def index
+    @documents = Document.all
+    if params[:department]
+      @documents = Document.where("department = ?", params[:department])
+    end
+  end
 
   private
-def doc_params
-  params.require(:document).permit(:title, :link, :tag, :department, :content)
-end
-      
+  def doc_params
+    params.require(:document).permit(:title, :link, :tag, :department, :content)
+  end
+
 end
