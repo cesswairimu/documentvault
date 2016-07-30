@@ -11,5 +11,7 @@ Awesome stuff you can do here
 </p>
 <p>
 Hurry Join to start enjoying our awesome services!!!!</p>
+<% unless logged_in? %>
 <%= link_to "Join !!!", join_path %> 
+<% end %>
 </body>
