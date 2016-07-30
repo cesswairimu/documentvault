@@ -51,7 +51,15 @@ color:maroon;
 th, td {
     padding: 0.25rem;
     text-align: left;
-   // border: 1px solid #ccc;
+    border: 1px solid gray;
 
 }
 
+form {
+    border-radius: 5px;
+    font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow: hidden;
+}
+label {
+    width:50px;
+}
