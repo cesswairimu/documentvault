@@ -6,4 +6,8 @@ class Document < ApplicationRecord
   validates :department, presence: true
   validates :content, presence: true, length: {minimum: 50 }
   DEPARTMENT_LIST = [ "Operations", "Training", "Marketing","Computing", "Accounting" ]
+
+  def self.search(search)
+    where("title like?",  "%#{search}%")
+  end
 end
