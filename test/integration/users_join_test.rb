@@ -19,11 +19,12 @@ class UsersJoinTest < ActionDispatch::IntegrationTest
     assert_difference 'User.count', 1 do
       post users_path, params:{
         user: {
-          name: "Cess", email: "cess@gmail.com", password:"terrence",
+          name: "Renn", email: "cess@gmail.com", password:"terrence",
           password_confirmation: "terrence"
         }
       }
     end
+    follow_redirect!
     assert_template 'users/show'
     assert_not flash.empty?
   end
