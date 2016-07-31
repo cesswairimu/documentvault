@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     @user = User.new(join_params)
     if @user.save
       flash[:yeah] = "Welcome to Document Vault Cheeers!! have fun"
-      redirect_to @user
+      # redirect_to @user
+      render 'show'
     else
       render 'new'
     end
