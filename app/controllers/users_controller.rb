@@ -8,10 +8,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(join_params)
     if @user.save
-      flash[:yeah] = "Welcome to Document Vault Cheeers!! have fun"
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info] = "Check you email to get the fun started "
       # redirect_to @user
-      log_in @user
-      render 'show'
+      # log_in @user
+      # render 'show'
+      redirect_to root_url
     else
       render 'new'
     end
