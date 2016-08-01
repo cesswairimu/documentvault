@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:yeah] = "Welcome to Document Vault Cheeers!! have fun"
       # redirect_to @user
+      log_in @user
       render 'show'
     else
       render 'new'
