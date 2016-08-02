@@ -17,7 +17,20 @@ class DocumentsController < ApplicationController
   def show
     @document = Document.find(params[:id])
   end
+  def edit
+    @document = Document.find(params[:id])
+  end
+  def update
+    @document = Document.find(params[:id])
+    if
+      @document.update_attributes(doc_params)
+      flash[:yeah] = "Successful Edit!!"
+    else
+      flash[:nasty] = "Error editing document!!!"
+      render 'edit'
+    end
 
+  end
   def index
     if params[:department]
       @documents = Document.where("department = ?", params[:department])
