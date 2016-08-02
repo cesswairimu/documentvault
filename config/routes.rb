@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get'about' => 'docpages#about'
 
   get 'support' => 'docpages#support'
+  get 'mail' => 'docpages#mail'
   get 'join' => 'users#new'
   get 'login' => 'logins#new'
   post 'login' => 'logins#create'
