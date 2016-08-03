@@ -2,4 +2,4 @@ Document Vault
 <%= @user.name%>
 Welcome to the Document Vault Enjoy!!!
 Click the link below to activate  your account
-<%= edit_accouser_mailer/account_activation.text.erbunt_activation_url(@user.activation_token, email: @user.email) %>
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
