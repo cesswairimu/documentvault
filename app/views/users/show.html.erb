@@ -1,5 +1,19 @@
-
-Hello <%= @user.name %>, Welcome back!!
-
-<br>
-<%= @user.email %>
+<h1>Hello <%= @user.name %>!!!!! </h1>
+<strong>You have  uploaded <%= @documents.count %> documents</strong>
+<table>
+    <tr>
+        <th> Title</th>
+        <th>Link</th>
+        <th>Department</th>
+        <th></th>
+                </tr>
+<% @documents.each do |document| %>
+    <tr>
+        <td><%= document.title %></td>
+        <td><%= link_to (document.link), document_path(id: document.id) %></td>
+        <td><%= document.department %></td>
+        <td><%= link_to "Edit",edit_document_path(document)  %></td> 
+        <td><%= link_to "Delete",(document), method: :delete, data: { confirm: "You sure about this?" } %>
+        </tr>
+    <% end %>
+    </table>
