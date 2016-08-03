@@ -8,6 +8,6 @@ class Document < ApplicationRecord
   DEPARTMENT_LIST = [ "Operations", "Training", "Marketing","Computing", "Accounting" ]
 
   def self.search(search)
-    where("title like?",  "%#{search}%")
+    where("title like? OR tag like?",  "%#{search}%", "%#{search}%")
   end
 end
