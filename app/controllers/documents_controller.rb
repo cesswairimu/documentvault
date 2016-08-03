@@ -41,6 +41,11 @@ class DocumentsController < ApplicationController
       @documents = Document.all
     end
   end
+  def destroy
+    @document = Document.find(params[:id]).destroy
+    flash[:info] =  "You have deleted #{@document.title}"
+    redirect_to user_path
+  end
 
   private
   def doc_params
