@@ -60,9 +60,14 @@ th, td {
 }
 
 form {
-    border-radius: 5px;
+    width:800px;
+    margin-right:auto;
+    margin-left:auto;
+    // border:1px solid #000;
+    // border-radius: 5px;
     font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
     overflow: hidden;
+    position:center;
 }
 label {
     width:50px;
