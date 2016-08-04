@@ -6,7 +6,7 @@ class UsersJoinTest < ActionDispatch::IntegrationTest
     assert_no_difference 'User.count' do
       post users_path, params:{
         user: {
-          name: "cess", email: "the badone", password: "law", 
+          name: "cessy", email: "the badoney", password: "law", 
           password_confirmation: "lawrence"
         }
       }
@@ -19,7 +19,7 @@ class UsersJoinTest < ActionDispatch::IntegrationTest
     assert_difference 'User.count', 1 do
       post users_path, params:{
         user: {
-          name: "Renn", email: "cess@gmail.com", password:"terrence",
+          name: "Renny", email: "kuku@gmail.com", password:"terrence",
           password_confirmation: "terrence"
         }
       }
