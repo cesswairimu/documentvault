@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  before_action :logged_in_user
   def new
     @document = current_user.documents.build
   end
