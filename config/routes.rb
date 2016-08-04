@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   resources :users
   resources :logins
   resources :documents
-  resources:account_activations, only: [:edit]
-  
+  resources :account_activations, only: [:edit]
+
 end
