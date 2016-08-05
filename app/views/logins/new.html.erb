@@ -4,7 +4,7 @@
     <%= f.text_field :name %><br><br>
     <%= f.label :password, placeholder: "password" %>
     <%= f.password_field :password %><br> <br>
-    <%=  link_to "(forgot password)", "#" %><br> <br >
+    <%=  link_to "(forgot password)", new_password_reset_path %><br> <br >
     <%= f.label :remember do  %>
         <%= f.check_box :Remember %> 
         <span> Remember me here </span>
