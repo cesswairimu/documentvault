@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+
+
   root  'docpages#home'
 
   get'about' => 'docpages#about'
@@ -16,5 +18,6 @@ Rails.application.routes.draw do
   resources :logins
   resources :documents
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
 end
