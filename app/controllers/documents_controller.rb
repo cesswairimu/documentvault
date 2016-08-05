@@ -26,6 +26,7 @@ class DocumentsController < ApplicationController
     if
       @document.update_attributes(doc_params)
       flash[:yeah] = "Successful Edit!!"
+      redirect_to @document
     else
       flash[:nasty] = "Error editing document!!!"
       render 'edit'
