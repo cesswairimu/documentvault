@@ -8,9 +8,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(join_params)
     if @user.save
-      flash[:yeah] = "Welcome to the application "
-      log_in @user
-      redirect_to @user
+      UserMailer.account_activation(@user).deliver_now
+      flash[:yeah] = "Welcome to the application, Check email to activate account "
+      redirect_to root_url
     else
       render 'new'
     end
