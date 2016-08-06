@@ -14,7 +14,7 @@
     <tr>
 <% @documents.each do |doc| %>
     <td><%= doc.title %></li>
-    <td><%= doc.user.name %></li>
+    <td><%= doc.user %></li>
     <td><%= doc.tag %></td>
         <td><%=  link_to (doc.link), document_path(id: doc.id) %></td>
     <td><%=doc.department %></td>
