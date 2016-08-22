@@ -1,11 +1,11 @@
 <div class="row">
         <h1> Document Vault</h1>
-    <div class="medium-4 columns">
-        <%= image_tag("docu.jpg", width: "400", height: "180", alt: "logo") %>
-    </div>
+    <%# <div class="medium-4 columns"> %>
+        <%= image_tag("pad3.jpg") %>
+    <%# </div> %>
 </div>
 <div class="row">
-    <h2> Whatsapp with us?</h2>
+    <h3 align="center"> Whatsapp with us?</h3>
     <div class="medium-4 columns">
         <p><%= fa_icon "camera-retro" %></p>
 
@@ -20,12 +20,22 @@
         <p>
     </div>
     <div class="medium-4 columns">
-        Hurry Join to start enjoying our awesome services!!!!</p>
+        <p> Hurry Join to start enjoying our awesome services!!!!
+        This is awesome for an organisation, individuals or even friends and 
+        classmates who would like to share documents, assignments amongst themselves.
+        This web application can also be used by upcoming writers for their articles and 
+        thereby know if they have a shot in this world of writing.
+        Lazy and wierd folks can also  write a stories for people to read without
+        the idea of making money out from it.</p>
         <% unless logged_in? %>
-            <%= link_to "Join !!!", join_path %> 
+            <%= link_to "Join Now !!!", join_path %> 
         <% end %>
     </div>
     <div class="medium-4 columns">
-        <p>Lorem ipsum iiioooooooooooooooooooooooooooooooooooooo</p>
+        <p> This web applicaton was inspired by the need of different organisation to share documents
+        between departments for report writing and performance analysis.
+        Having to look for the secretary of a particular department to get the information about a particular project is hectic
+        How awesome can it be if we just had a place you can search through to look for a particular document when need!!
+        </p>
     </div>
 </div>
