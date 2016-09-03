@@ -1,4 +1,5 @@
 <div class="row">
+    <% provide(:title, "Join here") %>
 <h1>Join Document Vault!!</h1>
 <%= form_for(@user) do  |f|%>
     <%= render 'shared/errors', object: f.object %>
