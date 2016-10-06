@@ -3,8 +3,10 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
+  NAME = /[a-zA-Z]*/
   REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
+  validates :name, presence: true, uniqueness: true, length: { maximum: 20 },
+  format: { with: /\A[a-zA-Z]+\z/, }
   validates :email, presence: true, uniqueness: true,
     format: { with: REGEX }, length: { maximum: 30 } 
   validates :password, length: { minimum: 5  }
