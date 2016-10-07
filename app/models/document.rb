@@ -5,6 +5,7 @@ class Document < ApplicationRecord
   validates :tag, presence: true
   validates :department, presence: true
   validates :content, presence: true, length: {minimum: 50 }
+  validates :title, :tag, format: { with: /\A[a-zA-Z]+\z/, }
   DEPARTMENT_LIST = [ "Operations", "Training", "Marketing","Computing", "Accounting" ]
 
   def self.search(search)
