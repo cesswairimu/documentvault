@@ -1,4 +1,6 @@
 class DocumentsController < ApplicationController
+  add_breadcrumb "Documents", :documents_path
+  add_breadcrumb "New Doc", :new_document_path
   before_action :logged_in_user
   def new
     @document = current_user.documents.build
