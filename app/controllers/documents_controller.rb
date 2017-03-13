@@ -1,6 +1,5 @@
 class DocumentsController < ApplicationController
   add_breadcrumb "Documents", :documents_path
-  add_breadcrumb "New Doc", :new_document_path
   before_action :logged_in_user
   def new
     @document = current_user.documents.build
@@ -19,6 +18,9 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.find(params[:id])
+    @documents= Document.where("department= @document.title")
+    add_breadcrumb @document.department, documents_path(department: @document.department)
+    add_breadcrumb @document.title, @document
   end
   def edit
     @document = Document.find(params[:id])
