@@ -9,9 +9,10 @@ class DocumentsController < ApplicationController
     @document = current_user.documents.build(doc_params)
     if @document.save
       flash[:yeah] = "Successfully added a new document in the vault"
-      redirect_to @document
+      redirect_to documents_path
     else
       flash.now[:nasty] = "Error adding the document"
+      debugger
       render 'new'
     end
   end
@@ -19,8 +20,6 @@ class DocumentsController < ApplicationController
   def show
     @document = Document.find(params[:id])
     @documents= Document.where("department= @document.title")
-    add_breadcrumb @document.department, documents_path(department: @document.department)
-    add_breadcrumb @document.title, @document
   end
   def edit
     @document = Document.find(params[:id])
@@ -55,7 +54,7 @@ class DocumentsController < ApplicationController
 
   private
   def doc_params
-    params.require(:document).permit(:title, :link, :tag, :department, :content)
+    params.require(:document).permit(:title, :link, :tag, :department, :attachment)
   end
 
 end
