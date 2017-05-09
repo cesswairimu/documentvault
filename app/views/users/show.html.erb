@@ -1,4 +1,4 @@
-    <% provide(:title, "Profile") %>
+<% provide(:title, "Profile") %>
 <h1>Hello <%= @user.name %>!!!!! </h1>
 <strong>You have  uploaded <%= @documents.count %> documents</strong>
 <table>
@@ -6,15 +6,19 @@
         <th> Title</th>
         <th>Link</th>
         <th>Department</th>
+        <th>View Doc</th>
         <th></th>
-                </tr>
-<% @documents.each do |document| %>
-    <tr>
-        <td><%= document.title %></td>
-        <td><%= link_to (document.link), document_path(id: document.id) %></td>
-        <td><%= document.department %></td>
-        <td><%= link_to "Edit",edit_document_path(document)  %></td> 
-        <td><%= link_to "Delete",(document), method: :delete, data: { confirm: "You sure about this?" } %>
-        </tr>
-    <% end %>
-    </table>
+    </tr>
+    <% @documents.each do |document| %>
+        <tr>
+            <td><%= document.title %></td>
+            <td><%= link_to (document.link), document_path(id: document.id) %></td>
+            <td><%= document.department %></td>
+            <td> <%= link_to"Download Document", document.attachment_url %></td>
+            <td><%= link_to "Edit",edit_document_path(document)  %></td> 
+            <td><%= link_to "Delete",(document), method: :delete, data: { confirm: "You sure about this?" } %>
+    </tr>
+<% end %>
+</table>
+<p align="center"><%= link_to "Edit user", edit_user_path(current_user), class:"button" %> 
+      <%= link_to "New doc", new_document_path, class: "button" %> </p>

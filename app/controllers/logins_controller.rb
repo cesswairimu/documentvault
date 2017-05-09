@@ -14,7 +14,7 @@ class LoginsController < ApplicationController
          redirect_to root_url
        end
     else
-      flash[:nasty] = "Invalid Creditials Bunch!!"
+      flash[:nasty] = "Invalid Creditials Name and username does not match!!"
       render 'new'
     end
   end
