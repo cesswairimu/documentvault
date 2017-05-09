@@ -1,18 +1,29 @@
-<h1>New Document</h1>
+<div class="row">
+    <h1>New Document</h1>
 
-<%= form_for(@document) do |f| %>
-    <%= render 'shared/errors', object: f.object %>
-    <%= f.label :title %>
-    <%= f.text_field :title, placeholder: "Title" %><br><br>
-    <%= f.label :link %>
-    <%= f.text_field :link, placeholder: "Link" %><br><br>
-    <%= f.label :tag %>
-    <%= f.text_field :tag, placeholder: "Tag" %><br><br>
-    <%= f.label :department %>
-    <%= f.select :department,  Document::DEPARTMENT_LIST, {prompt: "Select a department"} %><br><br>
-    <%= f.label :Content %>
-    <%= f.text_area :content, placeholder: "Enter your content here", 
-        cols: "100", rows: "30" %><br><br>
+    <%= form_for(@document) do |f| %>
+        <%= render 'shared/errors', object: f.object %>
+        <div class="small-5">
+            <%= f.label :title %>
+            <%= f.text_field :title, placeholder: "Title" %><br><br>
+        </div>
+        <div class="small-5">
+            <%= f.label :link %>
+            <%= f.text_field :link, placeholder: "Link" %><br><br>
+        </div>
+        <div class="small-5">
+            <%= f.label :tag %>
+            <%= f.text_field :tag, placeholder: "Tag" %><br><br>
+        </div>
+        <div class="small-5">
+            <%= f.label :department %>
+            <%= f.select :department,  Document::DEPARTMENT_LIST, {prompt: "Select a department"} %><br><br>
+        </div>
+        <div class="small-5">
+            <%= f.label :attachment%>
+            <%= f.file_field :attachment%> 
+        </div>
         <%= f.submit "Reposite"%>
+</div>
 <% end %>
 

@@ -1,8 +1,6 @@
 <h3><%= @document.department %></h3>
-<div id="text-area">
-    <h2> <%= @document.title %>
-    </h2>
-<%= @document.content  %>
-</div>
+<h2> <%= @document.title %>
+</h2>
+<%= link_to"Download Document", @document.attachment_url %>
 <p>Document by: <%= @document.user.name %></p>
 

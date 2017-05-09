@@ -1,7 +1,12 @@
 <h1> Documents </h1>
 <%= form_tag documents_path, :method => 'get' do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search" %>
-    <% end %>
+<% end %>
+<%= link_to "Training", documents_path(department: "Training") %> |
+<%= link_to "Marketing", documents_path(department: "Marketing") %> |
+<%= link_to "Computing", documents_path(department: "Computing") %> | 
+<%= link_to "Accounting", documents_path(department: "Accounting") %> |
+<%= link_to "Operations", documents_path(department: "Operations") %> |
 <table>
     <tr>
         <th> Title </th>
@@ -9,20 +14,17 @@
         <th> Tag </th>
         <th> Link </th>
         <th> Department</th>
-        
+        <th>Content </th>
     </tr>
     <tr>
-<% @documents.each do |doc| %>
-    <td><%= doc.title %></li>
-    <td><%= doc.user.name %></li>
-    <td><%= doc.tag %></td>
-        <td><%=  link_to (doc.link), document_path(id: doc.id) %></td>
-    <td><%=doc.department %></td>
+        <% @documents.each do |doc| %>
+            <td><%= doc.title %></li>
+            <td><%= doc.user.name %></li>
+            <td><%= doc.tag %></td>
+            <td><%=  link_to (doc.link), document_path(id: doc.id) %></td>
+            <td><%=doc.department %></td>
+            <td><%= link_to"Download Document",doc.attachment_url %></td>
     </tr>
-    <% end %>
-    <%= link_to "Training", documents_path(department: "Training") %> |
-    <%= link_to "Marketing", documents_path(department: "Marketing") %> |
-    <%= link_to "Computing", documents_path(department: "Computing") %> | 
-    <%= link_to "Accounting", documents_path(department: "Accounting") %> |
-    <%= link_to "Operations", documents_path(department: "Operations") %> |
+<% end %>
+</table>
 
